@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { BarChart,  XAxis, YAxis, CartesianGrid, Bar, Cell } from 'recharts';
+import { BarChart,  XAxis, YAxis, CartesianGrid, Bar, Cell, ResponsiveContainer } from 'recharts';
 import { getStoredId } from '../../components/utility/localStorage';
 
 const PagesRead = () => {
@@ -79,10 +79,12 @@ const PagesRead = () => {
       };
 
     return (
-        <div className="lg:max-w-[1170px] mx-auto bg-[#1313130D] lg:p-28 rounded-2xl">
+        <div className="lg:max-w-[1170px] mx-auto mt-10 lg:mt-0    rounded-2xl">
 
             
-            <BarChart
+          <div className='py-10  mx-4 lg:p-28 lg:mx-0 rounded-2xl bg-[#1313130D] '>
+          <ResponsiveContainer width="95%" height={400}>
+         <BarChart
              width={904}
              height={480}
              data={data}
@@ -103,6 +105,8 @@ const PagesRead = () => {
         ))}
       </Bar>
             </BarChart>
+         </ResponsiveContainer>
+          </div>
         </div>
     );
 };
