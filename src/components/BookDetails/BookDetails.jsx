@@ -21,11 +21,11 @@ const BookDetails = () => {
     }
 
    
-    const handleWish = wish => {
+    // const handleWish = wish => {
       
-        saveBooksId(idInt,wish)
+    //     saveBooksId(idInt,wish)
         
-    }
+    // }
    
    
     return (
