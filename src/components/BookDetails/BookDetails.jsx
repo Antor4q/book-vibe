@@ -11,7 +11,7 @@ const BookDetails = () => {
     const singleBook = books.find(book => book.bookId === idInt)
     
     const handleRead = () => {
-        saveBooksId(id)
+        saveBooksId(idInt)
     }
 
     

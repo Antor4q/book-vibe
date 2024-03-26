@@ -7,11 +7,11 @@ const getStoredId = () => {
     return []
 }
 
-const saveBooksId = id =>{
+const saveBooksId = idInt =>{
     const getId = getStoredId()
-    const isExist = getId.find(itemId => itemId === id)
+    const isExist = getId.find(itemId => itemId === idInt)
     if(!isExist){
-        getId.push(id)
+        getId.push(idInt)
         localStorage.setItem('book-id', JSON.stringify(getId))
     }
     else{
