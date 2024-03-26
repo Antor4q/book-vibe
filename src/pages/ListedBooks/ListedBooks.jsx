@@ -16,12 +16,12 @@ const ListedBooks = () => {
 
     const [btnIndex,setBtnIndex] = useState(0)
     return (
-        <div className="lg:max-w-[1170px] mx-auto">
-            <div className="bg-[#1313130D] rounded-2xl text-center lg:p-8">
-            <h2 className="lg:text-[28px] font-bold text-center">Books</h2>
+        <div className="lg:max-w-[1170px] mx-auto p-4 lg:p-0">
+            <div className="bg-[#1313130D] rounded-2xl text-center p-6 lg:p-8">
+            <h2 className="lg:text-[28px] text-2xl font-bold text-center">Books</h2>
             </div>
 
-            <div className="text-center lg:mt-8 lg:mb-10">
+            <div className="text-center mt-4 mb-5 lg:mt-8 lg:mb-10">
             <button className="btn bg-green-600 px-7 text-white font-bold text-2xl">Sort By</button>
 
             </div>

@@ -50,9 +50,9 @@ const Nav = () => {
                     className={({isActive})=> isActive? "rounded-lg lg:text-[18px] text-[#23BE0A] border border-[#23BE0A] px-4 py-2": "lg:text-[18px] text-[#131313CC]"}>Contact</NavLink></li>
                 </ul>
             </div>
-            <div className="navbar-end gap-3">
-                <a className="bg-[#23BE0A] btn lg:text-[18px] text-white rounded-lg font-semibold  px-5 lg:px-[28px]">Sign In</a>
-                <a className="btn bg-[#59C6D2] lg:text-[18px] text-white rounded-lg font-semibold  px-5 lg:px-[28px]">Sign Up</a>
+            <div className="navbar-end pr-5 lg:pr-0  gap-2 lg:gap-3">
+                <a className="bg-[#23BE0A] btn lg:text-[18px] text-white rounded-lg font-semibold   px-4 lg:px-[28px]">Sign In</a>
+                <a className="btn bg-[#59C6D2] lg:text-[18px] text-white rounded-lg font-semibold  px-4 lg:px-[28px]">Sign Up</a>
             </div>
             </div>
 
