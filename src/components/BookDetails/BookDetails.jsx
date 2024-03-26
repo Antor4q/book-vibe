@@ -1,5 +1,9 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import {  useLoaderData, useParams } from "react-router-dom";
 import { saveBooksId } from "../utility/localStorage";
+
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -10,12 +14,20 @@ const BookDetails = () => {
     
     const singleBook = books.find(book => book.bookId === idInt)
     
-    const handleRead = () => {
-        saveBooksId(idInt)
+    const handleRead = (read) => {
+      
+        saveBooksId(idInt,read)
+       
     }
 
-    
-    
+   
+    const handleWish = wish => {
+      
+        saveBooksId(idInt,wish)
+        
+    }
+   
+   
     return (
         <div className="lg:max-w-[1170px] mx-auto lg:mt-[52px]">
            <div className="card grid grid-cols-2 lg:gap-12 lg:card-side ">
@@ -62,8 +74,10 @@ const BookDetails = () => {
                     </table>
                 </div>
                 <div className="card-actions">
-                <Link  onClick={handleRead} className="btn bg-white text-[#131313] font-semibold text-[18px] border border-[#13131326]">Read</Link>
-                <button className="btn text-[18px] bg-[#50B1C9] text-white font-semibold lg:px-7">Wishlist</button>
+                <button  onClick={handleRead} className="btn bg-white text-[#131313] font-semibold text-[18px] border border-[#13131326]">Read</button>
+                <ToastContainer></ToastContainer>
+                <button  className="btn text-[18px] bg-[#50B1C9] text-white font-semibold lg:px-7">Wishlist</button>
+                <ToastContainer></ToastContainer>
                 </div>
             </div>
             </div>

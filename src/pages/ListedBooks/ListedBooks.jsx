@@ -4,7 +4,16 @@ import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
 
 
+
+
+
+
 const ListedBooks = () => {
+    
+    
+   
+
+
     const [btnIndex,setBtnIndex] = useState(0)
     return (
         <div className="lg:max-w-[1170px] mx-auto">
