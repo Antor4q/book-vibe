@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 import { CiLocationOn } from "react-icons/ci";
 import { FaUserFriends } from "react-icons/fa";
@@ -12,8 +12,8 @@ const Read = () => {
     const [storedBooks,setStoredBooks] = useState([])
    
     useEffect(()=>{
-        const savedBooksId = JSON.parse(localStorage.getItem("read-book"))
-      
+        const savedBooksId = JSON.parse(localStorage.getItem("read-book")) || []
+    
        if(books.length > 0){
          const bookAdded = books.filter(book => savedBooksId.includes(book.bookId))
          setStoredBooks(bookAdded)
@@ -60,7 +60,7 @@ const Read = () => {
                                     <span className="bg-[#328EFF26] text-[#328EFF] rounded-2xl lg:rounded-[30px] px-3 py-2 lg:px-5 lg:py-3">Category: {book.category}</span>
                                 <span className="bg-[#FFAC3326] text-[#FFAC33] ml-4 lg:ml-0 rounded-[30px] lg:px-5 px-3 lg:py-3 py-2">Rating: {book.rating}</span>
                                 </div>
-                                <button className="btn text-white mt-2 lg:mt-0 rounded-[30px] font-medium text-[18px] bg-[#23BE0A] px-5">View Details</button>
+                                <Link to={`/bookDetails/${book.bookId}`} className="btn text-white mt-2 lg:mt-0 rounded-[30px] font-medium text-[18px] bg-[#23BE0A] px-5">View Details</Link>
                                 </div>
                             </div>
                             </div>
