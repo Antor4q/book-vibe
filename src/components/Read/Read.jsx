@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getStoredId } from "../../components/utility/localStorage";
+
 import { CiLocationOn } from "react-icons/ci";
 import { FaUserFriends } from "react-icons/fa";
 import { LuFileSpreadsheet } from "react-icons/lu";
+// import { getStoredBooks } from "../utility/localStorage";
 
 
 const Read = () => {
@@ -11,16 +12,16 @@ const Read = () => {
     const [storedBooks,setStoredBooks] = useState([])
    
     useEffect(()=>{
-        const savedBooksId = getStoredId()
-       
+        const savedBooksId = JSON.parse(localStorage.getItem("read-book"))
+      
        if(books.length > 0){
          const bookAdded = books.filter(book => savedBooksId.includes(book.bookId))
          setStoredBooks(bookAdded)
-         
+         console.log(books,savedBooksId,bookAdded)
          }
      },[books])
      
- console.log(storedBooks)
+ 
     
     return (
         <div className="lg:mt-8">

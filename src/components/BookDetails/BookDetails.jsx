@@ -1,9 +1,9 @@
 import {  useLoaderData, useParams } from "react-router-dom";
-import { saveBooksId } from "../utility/localStorage";
 
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { saveBooks } from "../utility/localStorage";
 
 
 
@@ -16,16 +16,20 @@ const BookDetails = () => {
     
     const handleRead = (read) => {
       
-        saveBooksId(idInt,read)
+     
+        toast.success("Read book are added")
+        saveBooks(idInt,read)
+      
+        // saveBooks(singleBook,read)
        
     }
 
+    const handleWish = wish => {
+        toast.success("Books are added on wish list")
+        saveBooks(idInt,wish)
+    }
+    
    
-    // const handleWish = wish => {
-      
-    //     saveBooksId(idInt,wish)
-        
-    // }
    
    
     return (
@@ -74,9 +78,9 @@ const BookDetails = () => {
                     </table>
                 </div>
                 <div className="card-actions">
-                <button  onClick={handleRead} className="btn bg-white text-[#131313] font-semibold text-[18px] border border-[#13131326]">Read</button>
+                <button  onClick={()=>handleRead("read-book")} className="btn bg-white text-[#131313] font-semibold text-[18px] border border-[#13131326]">Read</button>
                 <ToastContainer></ToastContainer>
-                <button  className="btn text-[18px] bg-[#50B1C9] text-white font-semibold lg:px-7">Wishlist</button>
+                <button onClick={()=> handleWish("wish-book")}  className="btn text-[18px] bg-[#50B1C9] text-white font-semibold lg:px-7">Wishlist</button>
                 <ToastContainer></ToastContainer>
                 </div>
             </div>

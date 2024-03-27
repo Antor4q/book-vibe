@@ -22,7 +22,15 @@ const ListedBooks = () => {
             </div>
 
             <div className="text-center mt-4 mb-5 lg:mt-8 lg:mb-10">
-            <button className="btn bg-green-600 px-7 text-white font-bold text-2xl">Sort By</button>
+                <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn m-1 bg-[#23BE0A] text-white">Sort By <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
+			<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+		</svg></div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li className="bg-[#23BE0A] text-white"><a>Rating</a></li>
+                <li className="bg-[#23BE0A] text-white"><a>Number of Pages</a></li>
+            </ul>
+            </div>
 
             </div>
 

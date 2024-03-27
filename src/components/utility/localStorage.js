@@ -1,29 +1,23 @@
 
-import {  toast } from 'react-toastify';
 
-import 'react-toastify/dist/ReactToastify.css';
-
-
-const getStoredId = () => {
-    const books = localStorage.getItem("read-book")
-    
-    if(books){
-        return JSON.parse(books)
+const getStoredBooks = (readOrWish) => {
+    const getBooks = localStorage.getItem(readOrWish);
+    if(getBooks){
+        return JSON.parse(getBooks)
     }
     return []
 }
 
-const saveBooksId = (idInt) =>{
-    const getId = getStoredId()
-    const isExist = getId.find(itemId => itemId === idInt)
-    if(!isExist){
-        getId.push(idInt)
-        localStorage.setItem("read-book", JSON.stringify(getId))
-        toast.success("Books Added to Read List")
+const saveBooks = (id,readOrWish) =>{
+    const booksId = getStoredBooks(readOrWish);
+    const storedId = booksId.find(itemId => itemId === id)
+    if(!storedId){
+        booksId.push(id)
+        localStorage.setItem(readOrWish, JSON.stringify(booksId))
     }
     else{
-       toast.error("You have Already Read this Book")
+        alert("This book already exist")
     }
 }
- 
-export { getStoredId, saveBooksId}
+
+export { getStoredBooks, saveBooks}

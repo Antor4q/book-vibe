@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+// import React, { useEffect, useState } from 'react';
+// import { useLoaderData } from 'react-router-dom';
 import { BarChart,  XAxis, YAxis, CartesianGrid, Bar, Cell, ResponsiveContainer } from 'recharts';
-import { getStoredId } from '../../components/utility/localStorage';
+// import { getStoredId } from '../../components/utility/localStorage';
 
 const PagesRead = () => {
 
-    const books = useLoaderData()
-    const [storedBooks,setStoredBooks] = useState([])
+//     const books = useLoaderData()
+//     const [storedBooks,setStoredBooks] = useState([])
    
-    useEffect(()=>{
-        const savedBooksId = getStoredId()
+//     useEffect(()=>{
+//         const savedBooksId = getStoredId()
        
-       if(books.length > 0){
-         const bookAdded = books.filter(book => savedBooksId.includes(book.bookId))
-         setStoredBooks(bookAdded)
+//        if(books.length > 0){
+//          const bookAdded = books.filter(book => savedBooksId.includes(book.bookId))
+//          setStoredBooks(bookAdded)
          
-         }
-     },[books])
+//          }
+//      },[books])
      
- console.log(storedBooks)
+//  console.log(storedBooks)
     
 
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink']
