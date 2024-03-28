@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { saveBooks } from "../utility/localStorage";
+import { saveWishBooks } from "../utility/wishLocal";
 
 
 
@@ -18,14 +19,14 @@ const BookDetails = () => {
    
     
   
-    const handleRead = (read) => {
-      saveBooks(idInt,read,true)
+    const handleRead = () => {
+      saveBooks(idInt)
      
         
     }
    
-    const handleWish = (wish) => {
-       saveBooks(idInt,wish,false)
+    const handleWish = () => {
+       saveWishBooks(idInt)
      }
     
    
@@ -77,9 +78,9 @@ const BookDetails = () => {
                     </table>
                 </div>
                 <div className="card-actions">
-                <button  onClick={()=>handleRead("read-book")} className="btn bg-white text-[#131313] font-semibold text-[18px] border border-[#13131326]">Read</button>
+                <button  onClick={handleRead} className="btn bg-white text-[#131313] font-semibold text-[18px] border border-[#13131326]">Read</button>
                 <ToastContainer></ToastContainer>
-                <button onClick={()=> handleWish("wish-book")}  className="btn text-[18px] bg-[#50B1C9] text-white font-semibold lg:px-7">Wishlist</button>
+                <button onClick={handleWish}  className="btn text-[18px] bg-[#50B1C9] text-white font-semibold lg:px-7">Wishlist</button>
                 <ToastContainer></ToastContainer>
                 </div>
             </div>

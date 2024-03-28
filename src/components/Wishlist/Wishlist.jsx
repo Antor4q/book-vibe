@@ -1,36 +1,30 @@
-import { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { FaUserFriends } from "react-icons/fa";
 import { LuFileSpreadsheet } from "react-icons/lu";
+import PropTypes from "prop-types"
+import { useContext } from "react";
+import { WishContext } from "../../pages/ListedBooks/ListedBooks";
 
 
 const Wishlist = () => {
+   
 
-    const books = useLoaderData()
-    const [wishBooks,setWishBooks] = useState([])
+    const wishBooks = useContext(WishContext)
     
-    useEffect(()=>{
-        const savedWishId = JSON.parse(localStorage.getItem("wish-book")) || []
-       
-     
-        if(books.length > 0){
-            const savedWishBook = books.filter(book => savedWishId.includes(book.bookId))
-           
-            
-            setWishBooks(savedWishBook)
-        }
-    },[books])
+  
+  
 
     return (
+        
         <div className="lg:mt-8">
-           
-           {
-                wishBooks.map(book => {
-                  
-                    return <>
-                        
-                    <div className="mt-7 lg:mt-0">
+            
+        {
+            wishBooks.map(book => {
+                return <>
+
+                      <div className="mt-7 lg:mt-0">
                         <div className="card lg:gap-6 flex-col lg:flex-row p-4  card-side lg:p-6 border border-[#13131326] lg:mb-6">
                         <figure className="lg:p-7 lg:w-[230px] w-full  p-5 bg-[#1313130D] rounded-2xl"><img src={book.image} alt="Movie"/></figure>
                         <div className="card-body mt-3 lg:mt-0  p-0">
@@ -68,11 +62,16 @@ const Wishlist = () => {
                     </div>
                 
                 </>
-                  
-                })
-            }
-        </div>
+            })
+        }
+
+    </div>
+      
     );
 };
+
+Wishlist.propTypes = {
+    bookWish: PropTypes.object
+}
 
 export default Wishlist;

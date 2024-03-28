@@ -1,35 +1,44 @@
-import { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+// import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { CiLocationOn } from "react-icons/ci";
 import { FaUserFriends } from "react-icons/fa";
 import { LuFileSpreadsheet } from "react-icons/lu";
-// import { getStoredBooks } from "../utility/localStorage";
 
+import PropTypes from "prop-types"
+import { useContext } from "react";
+import { AssetContext } from "../../pages/ListedBooks/ListedBooks";
+// import {  useEffect, useState } from "react";
 
-const Read = () => {
-    const books = useLoaderData()
-    const [storedBooks,setStoredBooks] = useState([])
-   
-    useEffect(()=>{
-        const savedBooksId = JSON.parse(localStorage.getItem("read-book")) || []
     
-       if(books.length > 0){
-         const bookAdded = books.filter(book => savedBooksId.includes(book.bookId))
-         setStoredBooks(bookAdded)
-         console.log(books,savedBooksId,bookAdded)
-         }
-     },[books])
-     
+const Read = () => {
+    
+        const readBooks = useContext(AssetContext)
+    // const books = useLoaderData()
+    // const [storedBooks,setStoredBooks] = useState([])
+   
+    // useEffect(()=>{
+    //     const savedBooksId = JSON.parse(localStorage.getItem("read-book")) || []
+        
+    //    if(books.length > 0){
+    //      const bookAdded = books.filter(book => savedBooksId.includes(book.bookId))
+    //      setStoredBooks(bookAdded)
+         
+    //      }
+    //  },[books])
+   
+
+
  
     
     return (
         <div className="lg:mt-8">
+            
             {
-                storedBooks.map(book => {
+                readBooks.map(book => {
                     return <>
-                    
-                        <div className="mt-7 lg:mt-0">
+
+                          <div className="mt-7 lg:mt-0">
                             <div className="card lg:gap-6 flex-col lg:flex-row p-4  card-side lg:p-6 border border-[#13131326] lg:mb-6">
                             <figure className="lg:p-7 lg:w-[230px] w-full  p-5 bg-[#1313130D] rounded-2xl"><img src={book.image} alt="Movie"/></figure>
                             <div className="card-body mt-3 lg:mt-0  p-0">
@@ -69,8 +78,13 @@ const Read = () => {
                     </>
                 })
             }
+
         </div>
     );
 };
+
+Read.propTypes = {
+    book: PropTypes.object
+}
 
 export default Read;
