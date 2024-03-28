@@ -10,10 +10,12 @@ import { saveWishBooks } from "../utility/wishLocal";
 
 
 
+
 const BookDetails = () => {
     const books = useLoaderData();
     const {id} = useParams()
     const idInt = parseInt(id)
+    
     
     const singleBook = books.find(book => book.bookId === idInt)
    
@@ -21,7 +23,7 @@ const BookDetails = () => {
   
     const handleRead = () => {
       saveBooks(idInt)
-     
+    
         
     }
    

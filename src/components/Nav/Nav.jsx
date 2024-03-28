@@ -24,17 +24,17 @@ const Nav = () => {
                     <li><NavLink to={"/pagesRead"} 
                     className={({isActive})=> isActive? "rounded-lg lg:text-[18px] text-[#23BE0A] border border-[#23BE0A] px-4 py-2": "lg:text-[18px] text-[#131313CC]"}>Pages to Read</NavLink></li>
                    
-                    <li><NavLink 
+                    <li><NavLink ti={"/about"} 
                     className={({isActive})=> isActive? "rounded-lg lg:text-[18px] text-[#23BE0A] border border-[#23BE0A] px-4 py-2": "lg:text-[18px] text-[#131313CC]"}>About</NavLink></li>
                    
-                    <li><NavLink  
+                    <li><NavLink  to={"/contact"} 
                     className={({isActive})=> isActive? "rounded-lg lg:text-[18px] text-[#23BE0A] border border-[#23BE0A] px-4 py-2": "lg:text-[18px] text-[#131313CC]"}>Contact</NavLink></li>
                 </ul>
                 </div>
                 <a className="btn btn-ghost text-xl lg:text-[28px] text-[#131313] p-0 font-bold">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 flex lg:gap-3 ">
+                <ul className="menu menu-horizontal px-1 flex lg:gap-2 ">
                     <li><NavLink to={"/"} 
                     className={({isActive})=> isActive? "rounded-lg lg:text-[18px] text-[#23BE0A] border border-[#23BE0A] ": "lg:text-[18px] text-[#131313CC]"}>Home</NavLink></li>
 
@@ -43,10 +43,10 @@ const Nav = () => {
                    <li> <NavLink to={"/pagesRead"} 
                     className={({isActive})=> isActive? "rounded-lg lg:text-[18px] text-[#23BE0A] border border-[#23BE0A]  ": "lg:text-[18px] text-[#131313CC]"}>Pages to Read</NavLink></li>
 
-                    <li><NavLink  
+                    <li><NavLink to={"/about"} 
                     className={({isActive})=> isActive? "rounded-lg lg:text-[18px] text-[#23BE0A] border border-[#23BE0A] px-4 py-2": "lg:text-[18px] text-[#131313CC]"}>About</NavLink></li>
                    
-                    <li><NavLink 
+                    <li><NavLink to={"/contact"}
                     className={({isActive})=> isActive? "rounded-lg lg:text-[18px] text-[#23BE0A] border border-[#23BE0A] px-4 py-2": "lg:text-[18px] text-[#131313CC]"}>Contact</NavLink></li>
                 </ul>
             </div>

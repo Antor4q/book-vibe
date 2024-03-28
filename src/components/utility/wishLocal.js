@@ -13,9 +13,16 @@ const saveWishBooks = (id) =>{
     const booksWishId = getStoredWishBooks();
     const storedWishId = booksWishId.find(itemId => itemId === id)
     if(!storedWishId){
+        const readBooks = JSON.parse(localStorage.getItem("read-book")) || []
+        const singleBook = readBooks.find(bookId => bookId === id)
+        console.log(singleBook)
+       if(singleBook){
+        toast.error("You have Already Read this Book")
+       }else{
         booksWishId.push(id)
         localStorage.setItem("wish-book", JSON.stringify(booksWishId))
        toast.success("Book Added to Wish List")
+       }
            
     }
     else{

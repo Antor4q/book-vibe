@@ -45,7 +45,7 @@ const PagesRead = () => {
         <div className="lg:max-w-[1170px] mx-auto mt-10 lg:mt-0    rounded-2xl">
 
             
-          <div className='py-10  mx-4 lg:p-28 lg:mx-0 rounded-2xl bg-[#1313130D] '>
+          <div className='py-3  mx-4 lg:p-8 lg:mx-0 rounded-2xl bg-[#1313130D] '>
           <ResponsiveContainer width="95%" height={400}>
          <BarChart
              width={904}
@@ -60,7 +60,7 @@ const PagesRead = () => {
             >
 
         <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey={"bookName"} />
+      <XAxis  dataKey={"bookName"} />
       <YAxis />
       <Tooltip></Tooltip>
       <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>

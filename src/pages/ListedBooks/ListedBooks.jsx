@@ -29,12 +29,13 @@ const ListedBooks = () => {
        if(books.length > 0){
          const bookAdded = books.filter(book => savedBooksId.includes(book.bookId))
          const bookWishAdded = books.filter(book => savedWishBooksId.includes(book.bookId))
+        
          setStoredBooks(bookAdded)
          setStoredWishBooks(bookWishAdded)
          }
      },[books])
 
-     console.log(storedBooks)
+   
 
     
 
