@@ -27,8 +27,8 @@ const BookDetails = () => {
      }
     
     return (
-        <div className="lg:max-w-[1170px] mx-auto lg:mt-[52px]">
-           <div className="card grid grid-cols-2 lg:gap-12 lg:card-side ">
+        <div className="lg:max-w-[1170px] mx-auto p-4 lg:p-0 lg:mt-[52px]">
+           <div className="card grid lg:grid-cols-2 grid-cols-1  lg:gap-12 lg:card-side ">
             <figure className="p-[70px]  bg-[#1313130D] rounded-2xl"><img src={singleBook.image} /></figure>
             <div className=" p-0">
                 <h2 className="text-[#131313] text-[40px] font-bold font-[playfair]">{singleBook.bookName}</h2>
