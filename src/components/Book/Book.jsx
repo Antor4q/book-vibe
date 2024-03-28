@@ -22,7 +22,7 @@ const Book = ({book}) => {
                     })
                 }
                 </div>
-                <h2 className="text-[#131313] my-4 text-2xl font-bold">{bookName}</h2>
+                <h2 className="text-[#131313] my-4 text-2xl font-bold font-[playfair]">{bookName}</h2>
                 <p className='text-[#131313CC] font-medium'>By: {author}</p>
                 <hr className='border-dashed border-[#13131326] my-5'></hr>
                 <div className='flex justify-between  text-[#131313CC] font-medium'>

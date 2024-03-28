@@ -15,31 +15,23 @@ const BookDetails = () => {
     const books = useLoaderData();
     const {id} = useParams()
     const idInt = parseInt(id)
-    
-    
-    const singleBook = books.find(book => book.bookId === idInt)
+     const singleBook = books.find(book => book.bookId === idInt)
    
-    
-  
-    const handleRead = () => {
+     const handleRead = () => {
       saveBooks(idInt)
     
         
     }
-   
-    const handleWish = () => {
+   const handleWish = () => {
        saveWishBooks(idInt)
      }
     
-   
-   
-   
     return (
         <div className="lg:max-w-[1170px] mx-auto lg:mt-[52px]">
            <div className="card grid grid-cols-2 lg:gap-12 lg:card-side ">
             <figure className="p-[70px]  bg-[#1313130D] rounded-2xl"><img src={singleBook.image} /></figure>
             <div className=" p-0">
-                <h2 className="text-[#131313] text-[40px] font-bold">{singleBook.bookName}</h2>
+                <h2 className="text-[#131313] text-[40px] font-bold font-[playfair]">{singleBook.bookName}</h2>
                 <p className="text-[#131313CC]  text-[20px] font-medium">By: {singleBook.author}</p>
                 <hr className="lg:mt-6 lg:mb-4" />
                 <p className="text-[#131313CC] text-[20px] font-medium">{singleBook.category}</p>
@@ -61,7 +53,8 @@ const BookDetails = () => {
                 <hr className="lg:my-6" />
                 <div className="flex flex-col gap-3">
                     <table className="table">
-                        <tr>
+                       <tbody>
+                       <tr>
                             <td className="lg:w-[150px]">Name of Pages :</td>
                             <th>{singleBook.totalPages}</th>
                          </tr>
@@ -77,6 +70,7 @@ const BookDetails = () => {
                             <td className="lg:w-[150px]">Rating :</td>
                             <th>{singleBook.rating}</th>
                          </tr>
+                       </tbody>
                     </table>
                 </div>
                 <div className="card-actions">

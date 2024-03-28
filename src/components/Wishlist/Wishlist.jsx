@@ -26,9 +26,9 @@ const Wishlist = () => {
 
                       <div className="mt-7 lg:mt-0">
                         <div className="card lg:gap-6 flex-col lg:flex-row p-4  card-side lg:p-6 border border-[#13131326] lg:mb-6">
-                        <figure className="lg:p-7 lg:w-[230px] w-full  p-5 bg-[#1313130D] rounded-2xl"><img src={book.image} alt="Movie"/></figure>
+                        <figure className="lg:p-7 lg:w-[230px] w-full  p-5 bg-[#1313130D] rounded-2xl"><img className="h-[190px] w-[150px] lg:w-full lg:h-full" src={book.image} alt="Movie"/></figure>
                         <div className="card-body mt-3 lg:mt-0  p-0">
-                            <h2 className="text-[#131313] text-2xl font-bold">{book.bookName}</h2>
+                            <h2 className="text-[#131313] text-2xl font-bold font-[playfair]">{book.bookName}</h2>
                             <p className="text-[#0d0d0dcc] font-medium">By : {book.author}</p>
                             <div className="flex flex-col lg:flex-row lg:items-center gap-4">
                                <div className="flex items-center gap-2">

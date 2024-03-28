@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
     return (
-        <div className=" lg:max-w-[1170px] mx-auto   lg:my-12">
+        <div className=" lg:max-w-[1170px] mx-auto font-[work-sans]  lg:my-12">
 
             <div className="navbar p-0 bg-base-100">
             <div className="navbar-start">

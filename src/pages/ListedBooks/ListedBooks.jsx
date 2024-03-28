@@ -12,7 +12,7 @@ import { getStoredWishBooks } from "../../components/utility/wishLocal";
 
 
 
-export const AssetContext = createContext("gold")
+export const AssetContext = createContext("read")
 
 export const WishContext = createContext("wish")
 
@@ -31,27 +31,34 @@ const ListedBooks = () => {
          const bookWishAdded = books.filter(book => savedWishBooksId.includes(book.bookId))
         
          setStoredBooks(bookAdded)
+       
          setStoredWishBooks(bookWishAdded)
          }
      },[books])
 
-   
+  
 
     
 
     const handleSort = filter =>{
         if(filter === "rating"){
-            console.log("This is rating clicked")
+            const ratingBooks = [...storedBooks].sort((a,b) => b.rating - a.rating)
+            setStoredBooks(ratingBooks)
+           
         }
         else if(filter === "pages"){
-            console.log("This is all pages")
+            const pagesBook = [...storedBooks].sort((a,b)=> b.totalPages - a.totalPages)
+            setStoredBooks(pagesBook)
+            
         }
        else if(filter === "year"){
-        console.log("This is published year")
+            const yearBook = [...storedBooks].sort((a,b) => b.yearOfPublishing - a.yearOfPublishing)
+            setStoredBooks(yearBook)
+            
        }
     }
    
-
+   
 
     const [btnIndex,setBtnIndex] = useState(0)
     return (
@@ -75,7 +82,7 @@ const ListedBooks = () => {
             </div>
 
             <div className="">
-            <div className="flex  items-center -mx-4 overflow-x-auto overflow-y-hidden  flex-nowrap  text-gray-100">
+            <div className="flex  pl-[20px] items-center -mx-4 overflow-x-auto overflow-y-hidden  flex-nowrap  text-gray-100">
                 <Link to={""} onClick={()=> setBtnIndex(0)}  className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${btnIndex === 0 ? "border border-b-0":"border-b"} rounded-t-lg border-gray-400 text-gray-50`}>
                    
                     <span className="text-[#0d0d0d80] text-[18px]">Read Books</span>
